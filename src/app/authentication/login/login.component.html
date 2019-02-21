@@ -1,0 +1,18 @@
+<p class="position"><span class="blue">Staff </span><span class="black">Plan</span></p>
+<div class="form-group main">
+    <form #loginform="ngForm" (ngSubmit)="onsubmit()" novalidate>
+        <input type="text" class="form-control border" #username="ngModel" placeholder="User name" name="username" ngModel
+            required [ngClass]="{'danger': username.errors && (username.dirty || username.touched)}">
+        <div *ngIf="username.errors && (username.dirty || username.touched)">
+            <small class="danger-text" *ngIf="username.errors.required">User Name is required.</small>
+        </div><br>
+        <input type="password" class="form-control border" #password="ngModel" placeholder="password" name="password" ngModel
+            required [ngClass]="{'danger':password.errors && (password.dirty || password.touched)}" minlength="3">
+        <div *ngIf="password.errors && (password.dirty || password.touched)">
+            <small class="danger-text" *ngIf="password.errors.required">Password is required.</small>
+            <small class="danger-text" *ngIf="password.errors.minlength">Password must be at least 3 characters long.</small>
+        </div><br>
+        <a routerLink="/auth/forgot_pass">Forgot Password?</a><br><br>
+        <button class="btn btn-primary btn-block round-btn">Sign in</button><br>
+    </form>
+</div>

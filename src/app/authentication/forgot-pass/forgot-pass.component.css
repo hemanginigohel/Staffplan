@@ -1,0 +1,22 @@
+.blue{
+    font-weight: bold;
+    font-size: 25px;
+    color: blue;
+}
+.black{
+    font-size: 25px;
+    color: black;
+}
+.position{
+    margin-left:25%;
+    margin-right:35%;
+    margin-top:8%;
+}
+.main{
+    margin-left:25%;
+    margin-right:35%;
+    
+    margin-bottom: 8%;
+    padding:5%;
+    border: 1px solid #d3d3d3;
+}

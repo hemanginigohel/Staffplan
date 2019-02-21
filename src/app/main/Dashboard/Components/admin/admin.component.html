@@ -1,0 +1,76 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4 spacing" >
+            <h2 class="heading">Create User</h2>
+            <form class="form-group" [formGroup]="create_user">
+                <label>First Name</label><br>
+                <input type="text" class="form-control"  formControlName="firstname">
+                <label>Middle Name</label><br>
+                <input type="text" class="form-control"   formControlName="middlename">
+                <label>Last Name</label><br>
+                <input type="text" class="form-control" formControlName="lastname">
+                <label>Role</label>
+                <a style="float:right" role="button" (click)="expand_role()">
+                    <span class="glyphicon glyphicon-plus"></span>
+                    Add role</a>
+                <br>
+                <input type="text" class="form-control"  formControlName="role">
+                <label>Office</label><br>
+                <input type="text" class="form-control"  formControlName="office">
+                <label>Region</label><br>
+                <input type="text" class="form-control"  formControlName="region">
+                <label>Division</label><br>
+                <input type="text" class="form-control"  formControlName="division">
+                <label>Username</label><br>
+                <input type="text" class="form-control"  formControlName="username">
+                <label>Password</label><br>
+                <input type="text" class="form-control"  formControlName="password">
+                <label>Address</label><br>
+                <input type="text" class="form-control"   formControlName="address">
+                <label>City</label><br>
+                <input type="text" class="form-control"   formControlName="city">
+                <label>ZIP</label><br>
+                <input type="text" class="form-control"   formControlName="zip"><br>
+                <button class="btn btn-primary margin round-btn padding_btn" (click)="onsubmit()">Submit</button><br>
+            </form>
+        </div>
+        <div class="col-md-4 spacing " >
+            <h2 class="heading">Create Custom Label</h2>
+            <form class="form-group ">
+                <label>Table Name</label><br>
+                <input type="text" class="form-control">
+                <label>Field Name</label><br>
+                <input type="text" class="form-control">
+                <label>Label Name</label><br>
+                <input type="text" class="form-control">
+                <button class="btn btn-primary margin round-btn padding_btn">Submit</button><br>
+            </form>
+            <form class="form-group" *ngIf="role">
+                <h2 class="margin-top-bottom">Create Role</h2>
+                <label>Role Name</label><br>
+                <input type="text" class="form-control">
+                <label>Acess Type</label><a style="float:right" role="button" (click)="expand_combination()">
+                    <span class="glyphicon glyphicon-plus"></span>
+                    Add combination</a><br>
+                <input type="text" class="form-control">
+
+                <button class="btn btn-primary margin round-btn padding_btn ">Submit</button><br>
+            </form>
+            <form class="form-group" *ngIf="combination">
+                <h2 class="margin-top-bottom">Add Access Right</h2>
+                <input type="checkbox"> View <br>
+                <input type="checkbox"> Edit <br>
+                <input type="checkbox"> Delete <br>
+                <input type="checkbox"> Add <br>
+                <input type="checkbox"> Add Staff <br>
+                <input type="checkbox"> Add Project <br>
+                <input type="checkbox"> Edit Project <br>
+                <input type="checkbox"> Edit Staff <br>
+                <input type="checkbox"> Delete Staff <br>
+                <input type="checkbox"> Delete Project <br><br>
+                <button class="btn btn-primary margin round-btn padding_btn ">Submit</button><br>
+            </form>
+        </div>
+
+    </div>
+</div>

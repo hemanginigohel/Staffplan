@@ -1,0 +1,47 @@
+.main{
+    margin-left:25%;
+    margin-right:35%;
+    margin-bottom: 8%;
+    padding:5%;
+    border: 1px solid #d3d3d3;
+}
+.blue{
+    font-weight: bold;
+    font-size: 25px;
+    color: #254b78;
+    
+}
+.black{
+    font-size: 25px;
+    color: gray;
+}
+.position{
+    margin-left:25%;
+    margin-right:35%;
+    margin-top:8%;
+}
+.round-btn{
+    border-radius: 25px;
+    background-color: #254b78 ;
+    size: 50px;
+}
+.danger{
+ /* background: #C0392B; */
+ border-color: crimson;
+}
+.danger-text{
+    color: red;
+}
+.border{
+    color: black;
+    border-left: 0px;
+    border-right: 0px;
+    border-top:0px;
+    border-radius: 0px;
+    border-color: white;
+    border-bottom: 1px solid #d3d3d3    ;
+}
+::placeholder { 
+    color: black;
+    
+  }

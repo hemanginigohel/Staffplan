@@ -1,0 +1,8 @@
+<p class="position"><span class="blue" >Staff </span><span class="black">Plan</span></p>
+<div class="main">
+<form #fg_form="ngForm" class="form-group" (ngSubmit)="onsubmit()"  novalidate>
+  Enter Your Email:<input type="text" class="form-control" name="email" ngModel  #email="ngModel" ><br><br>
+  <button class="btn btn-primary" routerLink="/main">Reset Password</button>&nbsp;
+  <button class="btn btn-primary" routerLink="/auth">Back</button>
+</form>
+</div>

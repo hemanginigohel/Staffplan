@@ -1,0 +1,5 @@
+.nav--desktop .main-menu a:not(:only-child):after {
+   color: #999999;
+   content: ' ▾';
+}
+.nav--desktop .main-menu-dropdown li.parent a:after {content: none;}
