@@ -1,22 +1,32 @@
-<div class="container-fluid no-margin">
-  <div class="left_div" style="padding:25px">
-    <h4 style="color:gray">HOME</h4>
-    <h2>Current Project Summary</h2> <br>
-    <select class="dropdown_location">
-      <option class="dropdown_location" *ngFor="let location of location_array">{{location}}</option>
-    </select>
-    <br><br>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-3 three_boxes ">Project in Progress ..</div>
-        <div class="col-md-3 three_boxes col-md-offset-1">Project Start This Year</div>
-        <div class="col-md-3 three_boxes col-md-offset-1">Project Ending This Year</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6 left_div">
+        <h4 style="color:gray">HOME</h4>
+        <h2>Current Project Summary</h2> <br>
+        <select class="dropdown_location">
+          <option class="dropdown_location" *ngFor="let location of location_array">{{location}}</option>
+        </select>
+        <br><br>
+        <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-3 three_boxes ">Project in Progress ..</div>
+              <div class="col-md-3 three_boxes col-md-offset-1">Project Start This Year</div>
+              <div class="col-md-3 three_boxes col-md-offset-1">Project Ending This Year</div>
+            </div>
+        </div>
+        <br><br>
+    </div> 
+    <div class="col-md-6 right_div">
+        <br><br>
+        <h2>Current Project Summary</h2>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-3 three_boxes ">Project in Progress ..</div>
+            <div class="col-md-3 three_boxes col-md-offset-1">Project Start This Year</div>
+            <div class="col-md-3 three_boxes col-md-offset-1">Project Ending This Year</div>
+          </div>
+          <br><br>
       </div>
-      <br><br><br><br>
     </div>
-  </div>
-  <div class="right_div">
-    <br><br>
-    <h2>Current Project Summary</h2>
   </div>
 </div>

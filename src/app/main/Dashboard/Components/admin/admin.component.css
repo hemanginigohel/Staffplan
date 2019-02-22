@@ -22,10 +22,13 @@ label{
     color:gray;
 }
 input{
-    margin-bottom: 20px;
+    margin-bottom: 0px;
 }
 .padding_btn{
     padding:5px;
     padding-left: 25px;
     padding-right: 25px
+}
+.danger-text{
+    color: red;
 }

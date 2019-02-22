@@ -1,74 +1,132 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-4 spacing" >
+        <div class="col-md-4 spacing">
             <h2 class="heading">Create User</h2>
             <form class="form-group" [formGroup]="create_user">
                 <label>First Name</label><br>
-                <input type="text" class="form-control"  formControlName="firstname">
+                <input type="text" class="form-control" formControlName="firstname">
+                <div
+                    *ngIf="create_user.controls.firstname.errors&&(create_user.controls.firstname.dirty || create_user.controls.firstname.touched)">
+                    <small *ngIf="create_user.controls.firstname.errors.required" class="danger-text">required..</small>
+                    <small *ngIf="create_user.controls.firstname.errors.minlength" class="danger-text">Minimum 3
+                        character requiured.</small>
+                </div><br>
                 <label>Middle Name</label><br>
-                <input type="text" class="form-control"   formControlName="middlename">
+                <input type="text" class="form-control" formControlName="middlename">
+                <div
+                    *ngIf="create_user.controls.middlename.errors&&(create_user.controls.middlename.dirty || create_user.controls.middlename.touched)">
+                    <small *ngIf="create_user.controls.middlename.errors.required"
+                        class="danger-text">required..</small>
+                    <small *ngIf="create_user.controls.middlename.errors.minlength" class="danger-text">Minimum 3
+                        character requiured.</small>
+                </div><br>
                 <label>Last Name</label><br>
                 <input type="text" class="form-control" formControlName="lastname">
+                <div
+                    *ngIf="create_user.controls.lastname.errors&&(create_user.controls.lastname.dirty || create_user.controls.lastname.touched)">
+                    <small *ngIf="create_user.controls.lastname.errors.required" class="danger-text">required..</small>
+                    <small *ngIf="create_user.controls.lastname.errors.minlength" class="danger-text">Minimum 3
+                        character requiured.</small>
+                </div><br>
                 <label>Role</label>
                 <a style="float:right" role="button" (click)="expand_role()">
-                    <span class="glyphicon glyphicon-plus"></span>
-                    Add role</a>
-                <br>
-                <input type="text" class="form-control"  formControlName="role">
+                    <span class="glyphicon glyphicon-plus"></span>Add role</a><br>
+                <input type="text" class="form-control" formControlName="role">
+                <div
+                    *ngIf="create_user.controls.role.errors&&(create_user.controls.role.dirty || create_user.controls.role.touched)">
+                    <small *ngIf="create_user.controls.role.errors.required" class="danger-text">required..</small>
+                </div><br>
                 <label>Office</label><br>
-                <input type="text" class="form-control"  formControlName="office">
+                <input type="text" class="form-control" formControlName="office"><br>
                 <label>Region</label><br>
-                <input type="text" class="form-control"  formControlName="region">
+                <input type="text" class="form-control" formControlName="region"><br>
                 <label>Division</label><br>
-                <input type="text" class="form-control"  formControlName="division">
+                <input type="text" class="form-control" formControlName="division"><br>
                 <label>Username</label><br>
-                <input type="text" class="form-control"  formControlName="username">
+                <input type="text" class="form-control" formControlName="username">
+                <div
+                    *ngIf="create_user.controls.username.errors&&(create_user.controls.username.dirty || create_user.controls.username.touched)">
+                    <small *ngIf="create_user.controls.username.errors.required" class="danger-text">required..</small>
+                </div><br>
                 <label>Password</label><br>
-                <input type="text" class="form-control"  formControlName="password">
+                <input type="password" class="form-control" formControlName="password">
+                <div
+                    *ngIf="create_user.controls.password.errors&&(create_user.controls.password.dirty || create_user.controls.password.touched)">
+                    <small *ngIf="create_user.controls.password.errors.required" class="danger-text">required..</small>
+                </div><br>
                 <label>Address</label><br>
-                <input type="text" class="form-control"   formControlName="address">
+                <input type="text" class="form-control" formControlName="address">
+                <div
+                    *ngIf="create_user.controls.address.errors&&(create_user.controls.address.dirty || create_user.controls.address.touched)">
+                    <small *ngIf="create_user.controls.address.errors.required" class="danger-text">required..</small>
+                </div><br>
                 <label>City</label><br>
-                <input type="text" class="form-control"   formControlName="city">
+                <input type="text" class="form-control" formControlName="city">
+                <div
+                    *ngIf="create_user.controls.city.errors&&(create_user.controls.city.dirty || create_user.controls.city.touched)">
+                    <small *ngIf="create_user.controls.city.errors.required" class="danger-text">required..</small>
+                </div><br>
                 <label>ZIP</label><br>
-                <input type="text" class="form-control"   formControlName="zip"><br>
+                <input type="text" class="form-control" formControlName="zip">
+                <div
+                    *ngIf="create_user.controls.zip.errors&&(create_user.controls.zip.dirty || create_user.controls.zip.touched)">
+                    <small *ngIf="create_user.controls.zip.errors.required" class="danger-text">required..</small>
+                </div><br>
                 <button class="btn btn-primary margin round-btn padding_btn" (click)="onsubmit()">Submit</button><br>
             </form>
         </div>
-        <div class="col-md-4 spacing " >
+        <div class="col-md-4 spacing ">
             <h2 class="heading">Create Custom Label</h2>
-            <form class="form-group ">
+            <form class="form-group" [formGroup]="custom_label">
                 <label>Table Name</label><br>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" formControlName="tablename">
+                <div
+                    *ngIf="custom_label.controls.tablename.errors&&(custom_label.controls.tablename.dirty || custom_label.controls.tablename.touched)">
+                    <small *ngIf="custom_label.controls.tablename.errors.required"
+                        class="danger-text">required..</small>
+                </div><br>
                 <label>Field Name</label><br>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" formControlName="fieldname">
+                <div
+                    *ngIf="custom_label.controls.fieldname.errors&&(custom_label.controls.fieldname.dirty || custom_label.controls.fieldname.touched)">
+                    <small *ngIf="custom_label.controls.fieldname.errors.required"
+                        class="danger-text">required..</small>
+                </div><br>
                 <label>Label Name</label><br>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" formControlName="labelname">
+                <div
+                    *ngIf="custom_label.controls.labelname.errors&&(custom_label.controls.labelname.dirty || custom_label.controls.labelname.touched)">
+                    <small *ngIf="custom_label.controls.labelname.errors.required"
+                        class="danger-text">required..</small>
+                </div><br>
                 <button class="btn btn-primary margin round-btn padding_btn">Submit</button><br>
             </form>
-            <form class="form-group" *ngIf="role">
+            <form class="form-group" *ngIf="role" [formGroup]="create_role">
                 <h2 class="margin-top-bottom">Create Role</h2>
                 <label>Role Name</label><br>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" formControlName="rolename">
+                <div
+                    *ngIf="create_role.controls.rolename.errors&&(create_role.controls.rolename.dirty || create_role.controls.rolename.touched)">
+                    <small *ngIf="create_role.controls.rolename.errors.required"
+                        class="danger-text">required..</small>
+                </div><br>
                 <label>Acess Type</label><a style="float:right" role="button" (click)="expand_combination()">
                     <span class="glyphicon glyphicon-plus"></span>
                     Add combination</a><br>
-                <input type="text" class="form-control">
-
+                <input type="text" class="form-control" formControlName="accesstype">
+                <div
+                    *ngIf="create_role.controls.accesstype.errors&&(create_role.controls.accesstype.dirty || create_role.controls.accesstype.touched)">
+                    <small *ngIf="create_role.controls.accesstype.errors.required"
+                        class="danger-text">required..</small>
+                </div><br>
                 <button class="btn btn-primary margin round-btn padding_btn ">Submit</button><br>
             </form>
             <form class="form-group" *ngIf="combination">
                 <h2 class="margin-top-bottom">Add Access Right</h2>
-                <input type="checkbox"> View <br>
-                <input type="checkbox"> Edit <br>
-                <input type="checkbox"> Delete <br>
-                <input type="checkbox"> Add <br>
-                <input type="checkbox"> Add Staff <br>
-                <input type="checkbox"> Add Project <br>
-                <input type="checkbox"> Edit Project <br>
-                <input type="checkbox"> Edit Staff <br>
-                <input type="checkbox"> Delete Staff <br>
-                <input type="checkbox"> Delete Project <br><br>
-                <button class="btn btn-primary margin round-btn padding_btn ">Submit</button><br>
+                <div *ngFor="let arr of access_type">
+                    <input type="checkbox"> &nbsp;&nbsp;{{arr.TYPE}} <br>
+                </div>
+                <button class="btn btn-primary margin round-btn padding_btn">Submit</button><br>
             </form>
         </div>
 
