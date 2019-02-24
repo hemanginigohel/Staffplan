@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl,Validators } from "@angular/forms";
 import { AuthenticateUserService } from "../../../../authenticate-user.service";
+import { CookieService } from "ngx-cookie-service";
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
@@ -14,7 +15,9 @@ export class AdminComponent implements OnInit {
   create_user:FormGroup;
   custom_label:FormGroup;
   create_role:FormGroup;
-  constructor(private service:AuthenticateUserService) { }
+  constructor(private service:AuthenticateUserService,private cookie:CookieService) {
+    console.log(localStorage.getItem("SessionId"),"-->SessionID in constructor");
+   }
   
   ngOnInit() {
     this.create_user = new FormGroup({
@@ -46,15 +49,19 @@ export class AdminComponent implements OnInit {
   expand_role() {
     this.role = true;
     console.log(this.role);
+    this.service.label().
+    subscribe(response=>{
+      console.log(response);
+    })
   }
   expand_combination() {
     this.combination = true;
+    console.log(localStorage.getItem('SessionId'),"---SESSION ID IN EXP_COMB");
     this.service.get_access_type()
     .subscribe(response=>{
       this.label=response;
+      console.log(this.label);
       this.access_type=this.label.data;
-      console.log(this.label,"label");
-      console.log(this.access_type,"aceessssss typeeee");      
     })
     
   }

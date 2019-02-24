@@ -7,7 +7,9 @@ import {  CookieService} from "ngx-cookie-service";
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private cookieservice:CookieService) { }
+  constructor(private cookieservice:CookieService) {
+    console.log(localStorage.getItem("SessionId"),"-->cookie value inside dashboard");
+   }
 
   ngOnInit() {
     
